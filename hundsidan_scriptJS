@@ -1,0 +1,10 @@
+function performGoogleSearch() {
+    var dropdown1Value = document.getElementById("dropdown1").value;
+    var dropdown2Value = document.getElementById("dropdown2").value;
+
+    var searchQuery = `${dropdown1Value} "crossed with" ${dropdown2Value}`;
+    var searchUrl = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
+
+    // Open a new tab/window for the Google search
+    window.open(searchUrl, "_blank");
+}
