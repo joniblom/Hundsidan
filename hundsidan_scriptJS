@@ -1,4 +1,34 @@
+// Function to populate the dropdowns from a text file
+function populateDropdowns() {
+    // Fetch the dog breeds from the text file
+    fetch('dog-breeds.txt')
+        .then(response => response.text())
+        .then(data => {
+            const breeds = data.split('\n');
+            populateDropdown('dropdown1', breeds);
+            populateDropdown('dropdown2', breeds);
+        })
+        .catch(error => console.error('Error fetching dog breeds:', error));
+}
+
+// Function to populate a dropdown with options
+function populateDropdown(dropdownId, options) {
+    const dropdown = document.getElementById(dropdownId);
+    options.forEach(option => {
+        const optionElement = document.createElement('option');
+        optionElement.value = option;
+        optionElement.textContent = option;
+        dropdown.appendChild(optionElement);
+    });
+}
+
+// Function to perform Google search
 function performGoogleSearch() {
+    // Call the function to populate the dropdowns if not already populated
+    if (document.getElementById("dropdown1").options.length === 0) {
+        populateDropdowns();
+    }
+
     var dropdown1Value = document.getElementById("dropdown1").value;
     var dropdown2Value = document.getElementById("dropdown2").value;
 
@@ -8,3 +38,6 @@ function performGoogleSearch() {
     // Open a new tab/window for the Google search
     window.open(searchUrl, "_blank");
 }
+
+// Call the function to populate the dropdowns when the page loads
+window.onload = populateDropdowns;
