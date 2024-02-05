@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 const breeds = data.split('\n');
                 populateDropdown('dropdown1', breeds);
                 populateDropdown('dropdown2', breeds);
+
+                // Call the Google Image search function after populating dropdowns
+                performGoogleImageSearch();
             })
             .catch(error => console.error('Error fetching dog breeds:', error));
     }
@@ -22,17 +25,4 @@ document.addEventListener('DOMContentLoaded', function () {
             const optionElement = document.createElement('option');
             optionElement.value = option;
             optionElement.textContent = option;
-            dropdown.appendChild(optionElement);
-        });
-    }
-
-    // Function to perform Google Image search
-    function performGoogleImageSearch() {
-        // Rest of the code for Google Image search
-    }
-
-    // Function to display image search results
-    function displayImageResults(images) {
-        // Rest of the code for displaying image results
-    }
-});
+            dropdown.appendChild(opti
