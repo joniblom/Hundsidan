@@ -1,61 +1,38 @@
-// Function to populate the dropdowns from a text file
-function populateDropdowns() {
-    // Fetch the dog breeds from the text file
-    fetch('dog-breeds.txt')
-        .then(response => response.text())
-        .then(data => {
-            const breeds = data.split('\n');
-            populateDropdown('dropdown1', breeds);
-            populateDropdown('dropdown2', breeds);
-        })
-        .catch(error => console.error('Error fetching dog breeds:', error));
-}
+document.addEventListener('DOMContentLoaded', function () {
+    // Call the function to populate the dropdowns when the DOM is fully loaded
+    populateDropdowns();
 
-// Function to populate a dropdown with options
-function populateDropdown(dropdownId, options) {
-    const dropdown = document.getElementById(dropdownId);
-    options.forEach(option => {
-        const optionElement = document.createElement('option');
-        optionElement.value = option;
-        optionElement.textContent = option;
-        dropdown.appendChild(optionElement);
-    });
-}
-
-// Function to perform Google Image search
-function performGoogleImageSearch() {
-    // Call the function to populate the dropdowns if not already populated
-    if (document.getElementById("dropdown1").options.length === 0) {
-        populateDropdowns();
+    // Function to populate the dropdowns from a text file
+    function populateDropdowns() {
+        // Fetch the dog breeds from the text file
+        fetch('dog-breeds.txt')
+            .then(response => response.text())
+            .then(data => {
+                const breeds = data.split('\n');
+                populateDropdown('dropdown1', breeds);
+                populateDropdown('dropdown2', breeds);
+            })
+            .catch(error => console.error('Error fetching dog breeds:', error));
     }
 
-    var dropdown1Value = document.getElementById("dropdown1").value;
-    var dropdown2Value = document.getElementById("dropdown2").value;
+    // Function to populate a dropdown with options
+    function populateDropdown(dropdownId, options) {
+        const dropdown = document.getElementById(dropdownId);
+        options.forEach(option => {
+            const optionElement = document.createElement('option');
+            optionElement.value = option;
+            optionElement.textContent = option;
+            dropdown.appendChild(optionElement);
+        });
+    }
 
-    var searchQuery = `${dropdown1Value} "crossed with" ${dropdown2Value}`;
-    var apiKey = 'AIzaSyCYFQqSPgMp4e8ldTG4Bfj76MeUhHecOws';
-    var cx = 'd33d241c11a354808';
+    // Function to perform Google Image search
+    function performGoogleImageSearch() {
+        // Rest of the code for Google Image search
+    }
 
-    var searchUrl = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(searchQuery)}&cx=${cx}&key=${apiKey}&searchType=image`;
-
-    // Fetch image results from Google Custom Search API
-    fetch(searchUrl)
-        .then(response => response.json())
-        .then(data => {
-            displayImageResults(data.items);
-        })
-        .catch(error => console.error('Error fetching image results:', error));
-}
-
-// Function to display image search results
-function displayImageResults(images) {
-    var imageResultsDiv = document.getElementById('imageResults');
-    imageResultsDiv.innerHTML = ''; // Clear previous results
-
-    images.forEach(image => {
-        var imgElement = document.createElement('img');
-        imgElement.src = image.link;
-        imgElement.alt = image.title; // Add a property like 'title' for alt text
-        imageResultsDiv.appendChild(imgElement);
-    });
-}
+    // Function to display image search results
+    function displayImageResults(images) {
+        // Rest of the code for displaying image results
+    }
+});
