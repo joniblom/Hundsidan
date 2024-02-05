@@ -23,7 +23,7 @@ function populateDropdown(dropdownId, options) {
 }
 
 // Function to perform Google search
-function performGoogleSearch() {
+function performGoogleImageSearch() {
     // Call the function to populate the dropdowns if not already populated
     if (document.getElementById("dropdown1").options.length === 0) {
         populateDropdowns();
