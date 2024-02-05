@@ -55,4 +55,7 @@ function displayImageResults(images) {
     images.forEach(image => {
         var imgElement = document.createElement('img');
         imgElement.src = image.link;
-        imgElement.alt = image
+        imgElement.alt = image.title; // Add a property like 'title' for alt text
+        imageResultsDiv.appendChild(imgElement);
+    });
+}
