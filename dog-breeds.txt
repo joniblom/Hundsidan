@@ -1,5 +1,21 @@
-1
-2
-3
-4
-5
+Labrador Retriever
+German Shepherd
+Golden Retriever
+French Bulldog
+Bulldog
+Poodle
+Beagle
+Rottweiler
+Yorkshire Terrier
+Dachshund
+Siberian Husky
+Boxer
+Shih Tzu
+Great Dane
+Doberman Pinscher
+Chihuahua
+Pomeranian
+Australian Shepherd
+Shetland Sheepdog
+Cavalier King Charles Spaniel
+
