@@ -33,9 +33,9 @@ function performGoogleSearch() {
     var dropdown2Value = document.getElementById("dropdown2").value;
 
     var searchQuery = `${dropdown1Value} "crossed with" ${dropdown2Value}`;
-    var searchUrl = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
+    var searchUrl = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}&tbm=isch`;
 
-    // Open a new tab/window for the Google search
+    // Open a new tab/window for the Google Image search
     window.open(searchUrl, "_blank");
 }
 
