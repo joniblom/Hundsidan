@@ -33,7 +33,7 @@ function performUnsplashImageSearch() {
     var dropdown2Value = document.getElementById("dropdown2").value;
 
     var searchQuery = `${dropdown1Value} ${dropdown2Value}`;
-    var apiKey = 'YOUR_UNSPLASH_API_KEY';
+    var apiKey = 'OpXl6YYfRBMCjFAOM0psuA6T_t_ihr07WiCtiH5Ibfk';
     var apiUrl = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(searchQuery)}&client_id=${apiKey}`;
 
     // Fetch image results from Unsplash API
